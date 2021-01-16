@@ -1,0 +1,10 @@
+2021-01-16 19:29:59,948 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-01-16 19:51:12,207 [Worker-19: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: br.com.caelum:livraria-base:0.0.1-SNAPSHOT @ C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\pom.xml.
+2021-01-16 19:51:13,372 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-16 19:51:13,373 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\src\main\resources
+2021-01-16 19:51:13,376 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-16 19:51:13,377 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\src\test\resources
+2021-01-16 19:54:22,618 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-16 19:54:22,618 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\src\main\resources
+2021-01-16 19:54:22,621 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-16 19:54:22,621 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\src\test\resources
