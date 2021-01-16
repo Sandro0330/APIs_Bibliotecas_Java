@@ -8,3 +8,8 @@
 2021-01-16 19:54:22,618 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\src\main\resources
 2021-01-16 19:54:22,621 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-01-16 19:54:22,621 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\src\test\resources
+2021-01-16 20:27:58,345 [Worker-40: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: br.com.caelum:livraria-base:0.0.1-SNAPSHOT @ C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\pom.xml.
+2021-01-16 20:27:59,157 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-16 20:27:59,157 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\src\main\resources
+2021-01-16 20:27:59,160 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-16 20:27:59,160 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\src\test\resources
