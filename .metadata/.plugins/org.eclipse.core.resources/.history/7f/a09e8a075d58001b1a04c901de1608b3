@@ -1,0 +1,50 @@
+package java_io;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class TesteTXT {
+	public static void main(String[] args) throws FileNotFoundException {
+		
+		
+			
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Digite seu nome");
+			String nomeDigitado = sc.nextLine();
+			System.out.println("Digite sua idade");
+			int idadeDigitada = sc.nextInt();
+			System.out.println("Nome: " + nomeDigitado);
+			System.out.println("Idade: " + idadeDigitada);
+				
+		// Lendo um arquivo txt com  InputStream
+//		try {
+//			InputStream is = new FileInputStream("teste.txt");
+//			InputStreamReader isr = new InputStreamReader(is);
+//			BufferedReader reader = new BufferedReader(isr);
+//			String linha = reader.readLine();
+//			while (linha != null) {
+//				System.out.println(linha);
+//				linha = reader.readLine();
+//			}
+//			reader.close();
+//		} catch (IOException e) {
+//			System.out.println("Erro ao tentar ler o arquivo " + e);
+//		}
+
+		//Imprimindo o que é digitado no console
+//		try {
+//			InputStream is = System.in;
+//			InputStreamReader isr = new InputStreamReader(is);
+//			BufferedReader reader = new BufferedReader(isr);
+//			String linha = reader.readLine();
+//			while (linha != null) {
+//				System.out.println(linha);
+//				linha = reader.readLine();
+//			}
+//			reader.close();
+//		} catch (IOException e) {
+//			System.out.println("Erro ao tentar ler o arquivo " + e);
+//		}
+	}
+}

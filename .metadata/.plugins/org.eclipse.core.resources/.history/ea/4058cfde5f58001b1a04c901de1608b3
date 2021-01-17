@@ -1,0 +1,15 @@
+package java_io;
+
+import java.io.IOException;
+import java.io.PrintStream;
+
+public class TesteTXT {
+	public static void main(String[] args) throws IOException {
+		
+		PrintStream out = new PrintStream("saida2.txt");
+		out.println("Testando a escrita em arquivo");
+		out.println("Conteúdo na próxima linha");
+		out.close();
+		
+	}
+}

@@ -1,0 +1,18 @@
+package io;
+
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.List;
+
+import br.com.casadocodigo.livraria.produtos.Produto;
+
+public class Exportador {
+	
+	public static void paraCSV(List<Produto> produtos) throws IOException {
+		
+		PrintStream ps = new PrintStream("produto.csv");
+		ps.println("Nome, Descricao, Valor, ISBN");
+		
+		ps.close();
+	}
+}
