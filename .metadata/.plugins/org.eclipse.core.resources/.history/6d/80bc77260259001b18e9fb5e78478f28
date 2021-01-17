@@ -1,0 +1,16 @@
+package repositorio;
+
+import br.com.casadocodigo.livraria.Autor;
+import br.com.casadocodigo.livraria.produtos.Livro;
+import br.com.casadocodigo.livraria.produtos.LivroFisico;
+import br.com.casadocodigo.livraria.produtos.Produto;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+public class RepositorioDeProdutos {
+
+	public ObservableList<Produto> lista() {
+		
+	}
+
+}

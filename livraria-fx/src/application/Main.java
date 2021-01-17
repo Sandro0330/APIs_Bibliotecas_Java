@@ -6,8 +6,6 @@ import br.com.casadocodigo.livraria.produtos.Produto;
 import io.Exportador;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -52,14 +50,11 @@ public class Main extends Application {
 		button.setLayoutX(575);
 		button.setLayoutY(25);
 		
-		button.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				try {
-					new Exportador().paraCSV(produtos);
-				} catch (IOException e) {
-					System.out.println("Erro ao exportar: " + e);
-				}
+		button.setOnAction(event -> {
+			try {
+				new Exportador().paraCSV(produtos);
+			} catch (IOException e) {
+				System.out.println("Erro ao exportar: "+ e);
 			}
 		});
 	
@@ -76,6 +71,15 @@ public class Main extends Application {
 		primaryStage.setTitle("Sistema da livraria com Java FX");
 		primaryStage.show();
 
+	}
+	
+	@SuppressWarnings("unused")
+	private void exportaEmCSV(ObservableList<Produto> produtos) {
+		try {
+			new Exportador().paraCSV(produtos);
+		} catch (IOException e) {
+			System.out.println("Erro ao exportar: "+ e);
+		}
 	}
 
 	public static void main(String[] args) {

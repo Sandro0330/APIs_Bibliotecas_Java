@@ -1,39 +1,45 @@
 package repositorio;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import br.com.casadocodigo.livraria.Autor;
-import br.com.casadocodigo.livraria.produtos.Livro;
 import br.com.casadocodigo.livraria.produtos.LivroFisico;
 import br.com.casadocodigo.livraria.produtos.Produto;
+import db.ConnectionFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class RepositorioDeProdutos {
 
 	public ObservableList<Produto> lista() {
-		Autor autor = new Autor();
-		autor.setNome("Rodrigo Turini");
-		autor.setEmail("rodrigo.turini@caelum.com.br");
-		autor.setCpf("123.456.789.10");
-		Livro livro = new LivroFisico(autor);
-		livro.setNome("Java 8 Prático");
-		livro.setDescricao("Novos recursos da linguagem");
-		livro.setValor(59.90);
-		livro.setIsbn("978-85-66250-46-6");
-		Livro maisUmlivro = new LivroFisico(autor);
-		maisUmlivro.setNome("Desbravando a O.O.");
-		maisUmlivro.setDescricao("Livro de Java e O.O");
-		maisUmlivro.setValor(59.90);
-		maisUmlivro.setIsbn("321-54-67890-11-2");
-		Autor outroAutor = new Autor();
-		outroAutor.setNome("Paulo Silveira");
-		outroAutor.setEmail("paulo.silveira@caelum.com.br");
-		outroAutor.setCpf("123.456.789.10");
-		Livro outroLivro = new LivroFisico(outroAutor);
-		outroLivro.setNome("Lógica de Programação");
-		outroLivro.setDescricao("Crie seus primeiros programas");
-		outroLivro.setValor(59.90);
-		outroLivro.setIsbn("978-85-66250-22-0");
-		return FXCollections.observableArrayList(livro, maisUmlivro, outroLivro);
+		ObservableList<Produto> produtos = FXCollections.observableArrayList();
+		Connection connection = new ConnectionFactory().getConnection();
+		PreparedStatement pstm;
+		try {
+			pstm = connection.prepareStatement("SELECT * FROM produtos");
+			
+			ResultSet resultSet = pstm.executeQuery();
+			
+			while (resultSet.next()) {
+				LivroFisico livro = new LivroFisico(new Autor());
+				livro.setNome(resultSet.getString("nome"));
+				livro.setDescricao(resultSet.getString("descricao"));
+				livro.setValor(resultSet.getDouble("valor"));
+				livro.setIsbn(resultSet.getString("isbn"));
+				produtos.add(livro);
+			}
+			
+			resultSet.close();		
+			pstm.close();
+			connection.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		
+		return produtos;
 	}
 
 }

@@ -13,3 +13,4 @@
 2021-01-16 20:27:59,157 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\src\main\resources
 2021-01-16 20:27:59,160 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-01-16 20:27:59,160 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sandro\workspace\APIsBibliotecasJava\arquivos-do-livro\livraria-base\src\test\resources
+2021-01-17 17:15:07,945 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
