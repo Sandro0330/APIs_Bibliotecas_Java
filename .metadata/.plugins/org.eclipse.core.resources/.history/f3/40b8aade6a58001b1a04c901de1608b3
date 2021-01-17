@@ -56,7 +56,7 @@ public class Main extends Application {
 			@Override
 			public void handle(ActionEvent event) {
 				try {
-					new Exportador().paraCSV(produtos);
+					new Exportador().para_CSV(produtos);
 				} catch (IOException e) {
 					System.out.println("Erro ao exportar: " + e);
 				}
