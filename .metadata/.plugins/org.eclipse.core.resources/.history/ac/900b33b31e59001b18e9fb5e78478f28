@@ -1,0 +1,13 @@
+package dao;
+
+import br.com.casadocodigo.livraria.produtos.Produto;
+
+public class Add {
+	
+	public static void main(String[] args) {
+		
+		ProdutoDAO add = new ProdutoDAO();
+		
+		
+	}	
+}

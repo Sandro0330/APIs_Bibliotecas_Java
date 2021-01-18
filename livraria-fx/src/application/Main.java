@@ -3,6 +3,7 @@ package application;
 import java.io.IOException;
 
 import br.com.casadocodigo.livraria.produtos.Produto;
+import dao.ProdutoDAO;
 import io.Exportador;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
@@ -18,18 +19,17 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.stage.Stage;
-import repositorio.RepositorioDeProdutos;
 
 @SuppressWarnings({ "unchecked", "rawtypes" })
 public class Main extends Application {
+	
 	@Override
 	public void start(Stage primaryStage) {
 		Group group = new Group();
 		Scene scene = new Scene(group, 690, 510);
 
-		ObservableList<Produto> produtos =
+		ObservableList<Produto> produtos = new ProdutoDAO().lista();
 
-				new RepositorioDeProdutos().lista();
 		TableView tableView = new TableView(produtos);
 		TableColumn nomeColumn = new TableColumn("Nome");
 		nomeColumn.setMinWidth(180);
@@ -43,21 +43,20 @@ public class Main extends Application {
 		TableColumn isbnColumn = new TableColumn("ISBN");
 		isbnColumn.setMinWidth(180);
 		isbnColumn.setCellValueFactory(new PropertyValueFactory("isbn"));
-		
+
 		tableView.getColumns().addAll(nomeColumn, descColumn, valorColumn, isbnColumn);
-		
+
 		Button button = new Button("Exportar CSV");
 		button.setLayoutX(575);
 		button.setLayoutY(25);
 		
 		button.setOnAction(event -> {
-			try {
-				new Exportador().paraCSV(produtos);
-			} catch (IOException e) {
-				System.out.println("Erro ao exportar: "+ e);
-			}
+			new  Thread(() -> {
+				dormePorVinteSegundos();
+				exportaEmCSV(produtos);
+			}).start();	
 		});
-	
+
 		VBox vbox = new VBox(tableView);
 		vbox.setPadding(new Insets(70, 0, 0, 10));
 
@@ -72,17 +71,51 @@ public class Main extends Application {
 		primaryStage.show();
 
 	}
-	
-	@SuppressWarnings("unused")
+
 	private void exportaEmCSV(ObservableList<Produto> produtos) {
 		try {
 			new Exportador().paraCSV(produtos);
 		} catch (IOException e) {
-			System.out.println("Erro ao exportar: "+ e);
+			System.out.println("Erro ao exportar: " + e);
+		}
+	}
+	
+	private void dormePorVinteSegundos() {
+		try {
+			Thread.sleep(20000);
+		} catch (InterruptedException e) {
+			System.out.println("Ops, ocorreu um erro: " + e);
 		}
 	}
 
 	public static void main(String[] args) {
 		launch(args);
 	}
-}
+	
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+package threads;
+
+public class ExportadorDeCSV implements Runnable {
+
+	@Override
+	private void run() {
+		System.out.println("Rodando em paraleelo");
+		
+	}
+}
