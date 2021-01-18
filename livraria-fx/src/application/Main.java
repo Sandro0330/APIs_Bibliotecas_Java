@@ -48,21 +48,17 @@ public class Main extends Application {
 		tableView.getColumns().addAll(nomeColumn, descColumn, valorColumn, isbnColumn);
 
 		final VBox vbox = new VBox(tableView);
-		vbox.setPadding(new Insets(70, 0, 0, 10));
+		vbox.setId("vbox");
 		
 		Label label = new Label("Listagem de Livros");
+		label.setId("label-listagem");
 		label.setFont(Font.font("Lucida Grande", FontPosture.REGULAR, 30));
 		label.setPadding(new Insets(20, 0, 10, 10));
 		
 		Label progresso = new Label();
-		progresso.setLayoutX(485);
-		progresso.setLayoutY(30);
+		progresso.setId("label-progresso");
 		
-		Button button = new Button("Exportar CSV");
-		button.setLayoutX(575);
-		button.setLayoutY(25);
-
-		
+		Button button = new Button("Exportar CSV");		
 		button.setOnAction(event -> {
 			Task<Void> task = new Task<Void>() {
 				@Override
@@ -77,11 +73,19 @@ public class Main extends Application {
 			new Thread(task).start();
 		});
 
-		group.getChildren().addAll(label, vbox, button, progresso);
+		double valorTotal = produtos.stream().mapToDouble(Produto::getValor).sum();
+		Label labelFooter = new Label (
+				 String.format("Você tem " + String.format("R$%.2f", valorTotal) + " em estoque, com um total de produtos." + produtos.size() ));
+		labelFooter.setId("label-footer");
+		
+		
+		group.getChildren().addAll(label, vbox, button, progresso, labelFooter);
 
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Sistema da livraria com Java FX");
 		primaryStage.show();
+		
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 
 	}
 
