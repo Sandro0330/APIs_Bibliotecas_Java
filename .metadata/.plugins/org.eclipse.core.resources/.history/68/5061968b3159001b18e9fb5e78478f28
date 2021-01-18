@@ -77,6 +77,8 @@ public class Main extends Application {
 			new Thread(task).start();
 		});
 
+		
+		
 		group.getChildren().addAll(label, vbox, button, progresso);
 
 		primaryStage.setScene(scene);
